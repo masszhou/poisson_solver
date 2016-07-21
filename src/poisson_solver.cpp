@@ -107,7 +107,7 @@ bool PoissonSolver::SolvePoissonFunction(const Eigen::SparseMatrix<T> &sparsemat
      * more solvers can be choosen, refer to eigen library instruction
      */
     // Solve the (symmetric) system
-    Eigen::SimplicialLDLT<Eigen::SparseMatrix<double>> sparseSolver(sparsemat_A);
+    Eigen::SimplicialLDLT<Eigen::SparseMatrix<double> > sparseSolver(sparsemat_A);
     *vec_u = sparseSolver.solve(vec_b);
     if(sparseSolver.info() != Eigen::Success)
     {
